@@ -1,42 +1,24 @@
-/* Minima base style (revert-safe) */
+---
+---
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: #111;
-  background-color: #fff;
+@import "minima";
+
+/* 余白と本文幅を少しだけ整える */
+.wrapper { max-width: 980px; }
+
+/* 見出しの視認性 */
+h1, h2, h3 { letter-spacing: 0.2px; }
+
+/* コードの可読性 */
+pre, code {
+  font-variant-ligatures: none;
+}
+pre {
+  padding: 12px;
+  overflow: auto;
+  border-radius: 8px;
 }
 
-.wrapper {
-  max-width: 800px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-h1, h2, h3, h4 {
-  font-weight: 600;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 0.4em 0.6em;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 2em 0;
-}
+/* リンクを技術文書っぽく */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
