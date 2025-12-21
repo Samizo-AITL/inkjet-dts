@@ -29,6 +29,42 @@ of real printers or specific products.
 
 ---
 
+## Directory Structure
+
+This repository is organized to clearly separate **theoretical modeling**, **simulation code**, and **visual outputs**.
+
+```
+inkjet-dts/
+├─ _config.yml
+├─ index.md
+├─ README.md
+├─ _layouts/
+├─ _includes/
+├─ assets/
+│  └─ css/
+├─ code/
+│  ├─ main.py
+│  ├─ model.py
+│  └─ render.py
+├─ images/
+   ├─ print_fast.png
+   ├─ print_high_quality.png
+   |─ print_large_dot.png
+   └─ print_small_dot.png
+```
+
+---
+
+## Design Intent
+
+- **`code/`** contains a minimal but explicit Python model of inkjet trade-offs  
+- **`images/`** visualizes how parameter choices affect dot spread and print quality  
+- **GitHub Pages** is used to document the model, not to execute it
+
+This separation keeps the system easy to understand, extend, and reuse for educational purposes.
+
+---
+
 ## Dominant axes (D–T–S)
 
 Inkjet printing behavior can be reduced to three dominant axes:
