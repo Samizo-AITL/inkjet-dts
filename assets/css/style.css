@@ -1,18 +1,26 @@
 /* =========================================================
-   style.css  (GitHub Pages / Jekyll minimal style)
+   style.css
+   Technical / educational style for inkjet-dts
+   GitHub Pages + Jekyll (minima compatible)
    ========================================================= */
 
-* { box-sizing: border-box; }
+/* ---------- base ---------- */
+
+* {
+  box-sizing: border-box;
+}
 
 body.inkjet-dts {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   color: #222;
-  background: #fff;
+  background: #ffffff;
 }
+
+/* ---------- layout ---------- */
 
 .wrapper {
   max-width: 960px;
@@ -21,7 +29,7 @@ body.inkjet-dts {
 }
 
 .page-header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #d0d7de;
   padding: 1.5rem 0;
   margin-bottom: 2rem;
 }
@@ -29,6 +37,7 @@ body.inkjet-dts {
 .site-title {
   margin: 0;
   font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .site-title a {
@@ -38,7 +47,7 @@ body.inkjet-dts {
 
 .site-description {
   margin: 0.5rem 0 0;
-  color: #555;
+  color: #57606a;
   font-size: 0.95rem;
 }
 
@@ -49,17 +58,49 @@ body.inkjet-dts {
 }
 
 .page-footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d0d7de;
   padding: 1rem 0;
   font-size: 0.85rem;
-  color: #666;
+  color: #57606a;
   text-align: center;
 }
 
-h1, h2, h3 { font-weight: 600; }
-h2 { margin-top: 2.5rem; }
+/* ---------- headings ---------- */
 
-p { margin: 1rem 0; }
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #d0d7de;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+/* ---------- text ---------- */
+
+p {
+  margin: 1rem 0;
+}
+
+ul, ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* ---------- images ---------- */
 
 img {
   max-width: 100%;
@@ -68,19 +109,68 @@ img {
   margin: 1.5rem auto;
 }
 
+/* ---------- code ---------- */
+
 pre, code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo,
+               Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
 }
 
 pre {
   background: #f6f8fa;
   padding: 1rem;
   overflow-x: auto;
-  border-radius: 4px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
 }
 
 code {
   background: #f6f8fa;
   padding: 0.15rem 0.3rem;
-  border-radius: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- tables (technical) ---------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  border: 1px solid #d0d7de;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fbfcfd;
+}
+
+/* ---------- blockquote ---------- */
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #d0d7de;
+  background: #f6f8fa;
+  color: #444;
+}
+
+/* ---------- horizontal rule ---------- */
+
+hr {
+  border: none;
+  border-top: 1px solid #d0d7de;
+  margin: 2.5rem 0;
 }
