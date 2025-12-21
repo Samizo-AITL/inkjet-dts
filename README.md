@@ -51,6 +51,10 @@ inkjet-dts/
 │  └─ css/
 │     └─ style.css
 │
+├─ demo/
+│  ├─ index.html     
+│  └─ demo.js
+│
 ├─ code/
 │  ├─ main.py
 │  ├─ model.py
