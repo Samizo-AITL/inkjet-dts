@@ -131,21 +131,23 @@ code {
   border-radius: 4px;
 }
 
-/* ---------- tables (technical) ---------- */
+/* ---------- tables (compact technical) ---------- */
 
 table {
   border-collapse: collapse;
-  width: 100%;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;   /* 中央寄せ */
+  width: auto;           /* ← 画面いっぱいにしない */
+  max-width: 100%;
   font-size: 0.95rem;
 }
 
 th,
 td {
   border: 1px solid #d0d7de;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.6rem;   /* コンパクト */
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
+  white-space: nowrap;     /* 技術表記向け */
 }
 
 th {
