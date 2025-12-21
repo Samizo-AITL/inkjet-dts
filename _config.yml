@@ -1,0 +1,13 @@
+title: "mems-ana"
+description: "Lightweight MEMS structural analysis tools (pre-FEM)."
+lang: en
+
+url: "https://samizo-aitl.github.io"
+baseurl: "/mems-ana"
+
+theme: minima
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
