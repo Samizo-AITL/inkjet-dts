@@ -1,8 +1,3 @@
----
-layout: default
-title: Inkjet DTS
----
-
 # Inkjet DTS  
 **Inkjet Drop density – Throughput – Spread**
 
