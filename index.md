@@ -6,6 +6,10 @@ title: Inkjet DTS
 # Inkjet DTS  
 **Inkjet Drop density – Throughput – Spread**
 
+**Inkjet DTS** is a minimal design model for understanding
+how **print quality**, **throughput**, and **dot spread**
+are causally coupled in inkjet printing systems.
+
 ---
 
 ## 🔗 Links
