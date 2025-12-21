@@ -53,11 +53,15 @@ can be expressed as combinations of these three axes.
 
 **Lower drop density (FAST mode)**
 
-![FAST](images/print_fast.png)
+<img src="https://samizo-aitl.github.io/inkjet-dts/images/print_fast.png"
+     alt="FAST"
+     style="width:60%; max-width:600px; display:block; margin:auto;" />
 
 **Higher drop density (HIGH QUALITY mode)**
 
-![HIGH QUALITY](images/print_high_quality.png)
+<img src="https://samizo-aitl.github.io/inkjet-dts/images/print_high_quality.png"
+     alt="HIGH QUALITY"
+     style="width:60%; max-width:600px; display:block; margin:auto;" />
 
 ---
 
@@ -65,11 +69,15 @@ can be expressed as combinations of these three axes.
 
 **Small dot (sharper edges)**
 
-![SMALL DOT](images/print_small_dot.png)
+<img src="https://samizo-aitl.github.io/inkjet-dts/images/print_small_dot.png"
+     alt="SMALL DOT"
+     style="width:60%; max-width:600px; display:block; margin:auto;" />
 
 **Large dot (increased bleeding)**
 
-![LARGE DOT](images/print_large_dot.png)
+<img src="https://samizo-aitl.github.io/inkjet-dts/images/print_large_dot.png"
+     alt="LARGE DOT"
+     style="width:60%; max-width:600px; display:block; margin:auto;" />
 
 ---
 
