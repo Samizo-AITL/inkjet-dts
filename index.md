@@ -58,6 +58,18 @@ inkjet-dts/
    └─ print_small_dot.png
 ```
 
+---
+
+## Design Intent
+
+- **`code/`** contains a minimal but explicit Python model of inkjet trade-offs  
+- **`images/`** visualizes how parameter choices affect dot spread and print quality  
+- **GitHub Pages** is used to document the model, not to execute it
+
+This separation keeps the system easy to understand, extend, and reuse for educational purposes.
+
+---
+
 ## Dominant axes (D–T–S)
 
 Inkjet printing behavior can be reduced to three dominant axes:
