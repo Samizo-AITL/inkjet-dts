@@ -1,9 +1,9 @@
-title: "mems-ana"
-description: "Lightweight MEMS structural analysis tools (pre-FEM)."
+title: "inkjet-dts"
+description: "Minimal educational model of inkjet printing trade-offs: quality vs speed."
 lang: en
 
 url: "https://samizo-aitl.github.io"
-baseurl: "/mems-ana"
+baseurl: "/inkjet-dts"
 
 theme: minima
 
