@@ -1,13 +1,11 @@
-title: "inkjet-dts"
-description: "Minimal educational model of inkjet printing trade-offs: quality vs speed."
-lang: en
-
-url: "https://samizo-aitl.github.io"
-baseurl: "/inkjet-dts"
-
+title: inkjet-dts
+description: Minimal educational model of inkjet printing trade-offs: quality vs speed.
 theme: minima
 
 markdown: kramdown
+
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
