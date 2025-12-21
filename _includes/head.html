@@ -1,13 +1,11 @@
-<!-- Mermaid (for simple educational diagrams only) -->
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    if (!window.mermaid) return;
-
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: "neutral",   // 教材向け・主張しすぎない
-      securityLevel: "loose"
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+      });
+    }
   });
 </script>
