@@ -23,7 +23,7 @@ body.inkjet-dts {
 /* ---------- layout ---------- */
 
 .wrapper {
-  max-width: 960px;
+  max-width: 960px;          /* ヘッダは締める */
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -51,10 +51,11 @@ body.inkjet-dts {
   font-size: 0.95rem;
 }
 
+/* ★ 本文を広げる（最重要修正点） */
 .main-container {
-  max-width: 960px;
+  max-width: 1280px;         /* ← 960 → 1280 */
   margin: 0 auto;
-  padding: 0 1rem 3rem;
+  padding: 0 1.5rem 3rem;
 }
 
 .page-footer {
@@ -93,9 +94,10 @@ li {
 }
 
 /* ---------- images ---------- */
+/* ★ 図を「説明用サイズ」に制限 */
 
 img {
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
   display: block;
   margin: 1.5rem auto;
@@ -123,22 +125,22 @@ code {
   border-radius: 4px;
 }
 
-/* ---------- tables (FIXED: compact technical) ---------- */
+/* ---------- tables (compact technical) ---------- */
 
 table {
-  display: inline-table;     /* ★ これが決定打 */
+  display: inline-table;     /* ★ 正解：横に広がらない */
   border-collapse: collapse;
-  margin: 1.5rem auto;       /* 中央寄せ */
+  margin: 1.5rem auto;
   font-size: 0.9rem;
 }
 
 th,
 td {
   border: 1px solid #d0d7de;
-  padding: 0.35rem 0.6rem;   /* 技術表向けに詰める */
+  padding: 0.35rem 0.6rem;
   text-align: left;
   vertical-align: middle;
-  white-space: nowrap;      /* 行を伸ばさない */
+  white-space: nowrap;
 }
 
 th {
