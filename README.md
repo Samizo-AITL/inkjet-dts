@@ -1,93 +1,21 @@
-# Inkjet DTS  
-**Inkjet Drop density – Throughput – Spread**
+# Inkjet Quality vs Speed (Educational Model)
 
----
+## 目的
+インクジェット印刷における
+- 画質（粒状性）
+- 印刷速度
+のトレードオフを理解する。
 
-## 🔗 Links
+## モデルの考え方
+- 解像度が上がる → 単位面積あたりの滴数が増える
+- パス数が増える → 同じ場所に何度も吐出する
+- 滴数が増える → 粒状性は改善するが速度は落ちる
 
-| Language | GitHub Pages 🌐 | GitHub 💻 |
-|----------|----------------|-----------|
-| 🇺🇸 English | [![GitHub Pages EN](https://img.shields.io/badge/GitHub%20Pages-English-brightgreen?logo=github)](https://samizo-aitl.github.io/inkjet-dts/) | [![GitHub Repo EN](https://img.shields.io/badge/GitHub-English-blue?logo=github)](https://github.com/Samizo-AITL/inkjet-dts/tree/main) |
+## 可視化
+- print_fast.png
+- print_high_quality.png
+- print_small_dot.png
+- print_large_dot.png
 
----
-
-## Overview
-
-This page presents a **minimal educational model** for understanding the
-fundamental trade-off in inkjet printing between:
-
-- **Print quality**
-- **Printing speed**
-
-The model is intentionally simplified.  
-Its purpose is to clarify **design causality**, not to reproduce the behavior
-of real printers or specific products.
-
----
-
-## Dominant axes (D–T–S)
-
-Inkjet printing behavior can be reduced to three dominant axes:
-
-- **D — Drop density**  
-  Number of ink drops per unit area  
-  → governs graininess and perceived image quality
-
-- **T — Throughput**  
-  Ink ejection capability per unit time  
-  → limits achievable printing speed
-
-- **S — Spread**  
-  Dot spread on the medium (ink–paper interaction)  
-  → determines sharpness versus bleeding
-
-Most practical parameters  
-(dpi, passes, drop size, color count, nozzle count)  
-can be expressed as combinations of these three axes.
-
----
-
-## Visualization examples
-
-### Graininess vs. quality
-
-**Lower drop density (FAST mode)**
-
-![FAST](images/print_fast.png)
-
-**Higher drop density (HIGH QUALITY mode)**
-
-![HIGH QUALITY](images/print_high_quality.png)
-
----
-
-### Dot spread effect
-
-**Small dot (sharper edges)**
-
-![SMALL DOT](images/print_small_dot.png)
-
-**Large dot (increased bleeding)**
-
-![LARGE DOT](images/print_large_dot.png)
-
----
-
-## Notes
-
-- The images shown above are **synthetic visualizations**, not measured print data.
-- They are designed to make qualitative differences **immediately visible**.
-- Numerical accuracy and product-specific tuning are intentionally out of scope.
-
----
-
-## Purpose
-
-This project is intended to support:
-
-- engineering education
-- early-stage design discussions
-- clear explanation of inkjet trade-offs
-
-by keeping the model **simple, executable, and visual**.
-
+これらは実機再現ではなく、
+設計因果を理解するための疑似モデルである。
