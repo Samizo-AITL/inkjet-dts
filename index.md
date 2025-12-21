@@ -43,18 +43,26 @@ inkjet-dts/
 ├─ _config.yml
 ├─ index.md
 ├─ README.md
+│
 ├─ _layouts/
+│  └─ default.html
+│
 ├─ _includes/
+│  └─ head.html
+│
 ├─ assets/
 │  └─ css/
+│     └─ style.css
+│
 ├─ code/
 │  ├─ main.py
 │  ├─ model.py
 │  └─ render.py
-├─ images/
+│
+└─ images/
    ├─ print_fast.png
    ├─ print_high_quality.png
-   |─ print_large_dot.png
+   ├─ print_large_dot.png
    └─ print_small_dot.png
 ```
 
