@@ -138,7 +138,15 @@ can be expressed as combinations of these three axes.
 ## ▶ Interactive Animation Demo
 
 **Inkjet DTS (Drop Density – Throughput – Spread)**  
-This interactive animation visualizes the trade-off between print quality and speed.
+
+This interactive demo provides a **conceptual visualization** of the fundamental trade-off in inkjet printing:
+
+- **Drop Density (D)** — number of ink droplets deposited per unit area  
+- **Throughput (T)** — printing speed / firing frequency  
+- **Spread (S)** — dot expansion caused by fluid dynamics and substrate interaction  
+
+By adjusting these three parameters, the demo illustrates how **print quality and printing speed inherently compete** with each other.  
+The visualization is based on a **synthetic, educational model** intended to build intuition — it does **not** represent measured data or a device-specific simulation.
 
 👉 **[Launch Demo](./demo/)**
 
