@@ -13,11 +13,12 @@
       color: #c9d1d9;
     }
 
-    /* === CANVAS FIX === */
-    canvas {
+    /* canvas を全画面化 */
+    #c {
       position: fixed;
       inset: 0;
-      pointer-events: none; /* リンク操作を邪魔しない */
+      /* リンク操作を邪魔しない */
+      pointer-events: none;
     }
 
     #label {
@@ -49,36 +50,32 @@
 </head>
 
 <body>
-  <!-- Main animation canvas -->
   <canvas id="c"></canvas>
 
-  <!-- Demo links -->
   <div id="links">
     ▶ <a href="./index.html">Main Animation Demo</a><br>
     ▶ <a href="./drive_demo.html">Drive Waveform Demo</a><br>
     ▶ <a href="./dts_demo.html">DTS Physics Demo</a>
   </div>
 
-  <!-- Footer label -->
   <div id="label">
     Inkjet DTS Demo — Drop Density × Throughput × Spread
   </div>
 
-  <!-- Animation logic -->
+  <!-- 重要：canvas サイズだけ設定（名前衝突を避ける） -->
   <script>
-    // === CANVAS SIZE INITIALIZE (必須) ===
-    const canvas = document.getElementById("c");
-    const ctx = canvas.getContext("2d");
-
-    function resize() {
-      canvas.width  = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener("resize", resize);
-    resize();
+    (() => {
+      const c = document.getElementById("c");
+      function resize() {
+        c.width  = window.innerWidth;
+        c.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resize);
+      resize();
+    })();
   </script>
 
-  <!-- 実アニメーション本体 -->
+  <!-- 既存のアニメーション -->
   <script src="./demo.js"></script>
 </body>
 </html>
