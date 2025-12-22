@@ -1,36 +1,43 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>Inkjet DTS Demo</title>
-<style>
-body { font-family: sans-serif; margin: 20px; }
-canvas { border:1px solid #aaa; margin-bottom:10px; }
-label { margin-right:10px; }
-</style>
-</head>
-<body>
+<script type="module">
+import { simulate } from "./dts.js";
 
-<h2>Inkjet Delay-Time Spectrum Demo</h2>
+const cvV = document.getElementById("cvV").getContext("2d");
+const cvP = document.getElementById("cvP").getContext("2d");
+const cvQ = document.getElementById("cvQ").getContext("2d");
 
-<label>Drive Voltage [V]
-<input type="range" id="V" min="5" max="40" step="1" value="25">
-<span id="Vv">25</span></label>
+const V = document.getElementById("V");
+const D = document.getElementById("D");
+const Z = document.getElementById("Z");
 
-<label>Delay [µs]
-<input type="range" id="D" min="1" max="50" step="1" value="20">
-<span id="Dv">20</span></label>
+const Vv = document.getElementById("Vv");
+const Dv = document.getElementById("Dv");
+const Zv = document.getElementById("Zv");
 
-<label>Damping
-<input type="range" id="Z" min="0.01" max="0.2" step="0.01" value="0.08">
-<span id="Zv">0.08</span></label>
+function plot(ctx, data, scale=1){
+  ctx.clearRect(0,0,700,150);
+  ctx.beginPath();
+  data.forEach((v,i)=>{
+    ctx.lineTo(i*1.2, 75 - v*scale);
+  });
+  ctx.stroke();
+}
 
-<br><br>
+function update(){
+  const v = +V.value;
+  const d = +D.value;
+  const z = +Z.value;
 
-<canvas id="cvV" width="700" height="150"></canvas>
-<canvas id="cvP" width="700" height="150"></canvas>
-<canvas id="cvQ" width="700" height="150"></canvas>
+  Vv.textContent = v;
+  Dv.textContent = d;
+  Zv.textContent = z;
 
-<script src="dts.js"></script>
-</body>
-</html>
+  const {vin, P, Q} = simulate(v,d,z);
+
+  plot(cvV, vin, 2);
+  plot(cvP, P, 1);
+  plot(cvQ, Q, 10);
+}
+
+[V,D,Z].forEach(e=>e.oninput = update);
+update();
+</script>
