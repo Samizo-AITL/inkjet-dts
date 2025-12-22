@@ -149,6 +149,8 @@ This interactive animation visualizes the trade-off between print quality and sp
 
 👉 **[Drive Waveform Demo](./demo/drive_demo.html)**
 
+👉 **[DTS Physics Demo](./demo/dts_demo.html)**
+
 ---
 
 ## Notes
