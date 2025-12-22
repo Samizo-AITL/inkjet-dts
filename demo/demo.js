@@ -1,33 +1,36 @@
-// ===== DTS CORE MODEL =====
-
-// parameters
-export const dt = 1e-6; // 1 µs
-
-export function drivePulse(V, N, t_on=40, t_off=140){
-  return Array.from({length:N}, (_,i)=>
-    (i>t_on && i<t_off) ? V : 0
-  );
-}
-
-export function simulateDTS(vin, delay, damping){
-  const N = vin.length;
-  const P = Array(N).fill(0);
-  const Q = Array(N).fill(0);
-  const d = Math.floor(delay);
-
-  for(let i=d+1;i<N;i++){
-    P[i] = P[i-1]*(1-damping) + vin[i-d];
-    Q[i] = Math.max(P[i],0);
+// ===== 最低限・確実に動くテスト =====
+(() => {
+  const canvas = document.getElementById("c");
+  if (!canvas) {
+    console.error("canvas not found");
+    return;
   }
-  return {P, Q};
-}
 
-export function calcSpectrum(Q){
-  const spec = {};
-  Q.forEach((q,i)=>{
-    if(q>0){
-      spec[i] = (spec[i]||0)+1;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    console.error("ctx not available");
+    return;
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.strokeStyle = "#58a6ff";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+
+    const t = Date.now() * 0.002;
+    for (let x = 0; x < canvas.width; x++) {
+      const y =
+        canvas.height / 2 +
+        Math.sin(x * 0.01 + t) * 80;
+      if (x === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
     }
-  });
-  return spec;
-}
+    ctx.stroke();
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
