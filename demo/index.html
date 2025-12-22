@@ -1,53 +1,169 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Inkjet DTS Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Inkjet DTS Demo — D × T × S</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+      --bg: #0b0f14;
+      --fg: #c9d1d9;
+      --muted: #9fb3c8;
+      --link: #58a6ff;
+      --panel: rgba(20, 28, 38, 0.72);
+      --border: rgba(255,255,255,0.12);
+    }
+    html, body { height: 100%; }
     body {
       margin: 0;
-      background: #0b0f14;
-      color: #c9d1d9;
-      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      overflow: hidden;
     }
-    .wrap {
-      padding: 32px;
+    canvas { position: fixed; inset: 0; }
+
+    .ui {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      width: min(520px, calc(100vw - 32px));
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 14px 10px;
+      backdrop-filter: blur(10px);
     }
-    h1 {
-      margin-top: 0;
-      font-size: 28px;
+    .title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
     }
-    ul {
-      margin: 16px 0;
-      padding-left: 20px;
+    .title h1 {
+      font-size: 16px;
+      margin: 0;
+      letter-spacing: 0.02em;
     }
-    a {
-      color: #58a6ff;
-      text-decoration: none;
+    .title .tag {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      user-select: none;
+      white-space: nowrap;
     }
-    a:hover {
-      text-decoration: underline;
+    .desc {
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
     }
-    .note {
-      margin-top: 24px;
-      color: #9fb3c8;
-      font-size: 14px;
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 160px 1fr 64px;
+      align-items: center;
+      gap: 10px;
+    }
+    label {
+      font-size: 12px;
+      color: var(--fg);
+      opacity: 0.92;
+    }
+    input[type="range"] { width: 100%; }
+    .val {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .legend b { color: var(--fg); font-weight: 600; }
+    .links {
+      position: fixed;
+      bottom: 14px;
+      left: 16px;
+      font-size: 12px;
+      color: var(--muted);
+      user-select: none;
+    }
+    .links a { color: var(--link); text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+    .kbd {
+      border: 1px solid var(--border);
+      border-bottom-width: 2px;
+      border-radius: 6px;
+      padding: 0 6px;
+      margin: 0 4px;
+      color: var(--fg);
+      background: rgba(255,255,255,0.04);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <h1>Inkjet DTS Demo</h1>
+  <canvas id="c"></canvas>
 
-    <ul>
-      <li><a href="./drive_demo.html">Drive Waveform Demo</a></li>
-      <li><a href="./dts_demo.html">DTS Physics Demo</a></li>
-    </ul>
+  <div class="ui" role="group" aria-label="Inkjet DTS controls">
+    <div class="title">
+      <h1>Inkjet DTS — Drop density × Throughput × Spread</h1>
+      <div class="tag">Minimal educational model</div>
+    </div>
+    <p class="desc">
+      Adjust <b>D</b>, <b>T</b>, <b>S</b> to visualize the qualitative trade-off between
+      print quality and printing speed (synthetic, not measured data).
+    </p>
 
-    <div class="note">
-      Inkjet DTS — Drop Density × Throughput × Spread
+    <div class="grid">
+      <div class="row">
+        <label for="D">D — Drop density</label>
+        <input id="D" type="range" min="0.20" max="2.00" step="0.01" value="1.00" />
+        <div class="val" id="Dv">1.00</div>
+      </div>
+
+      <div class="row">
+        <label for="T">T — Throughput</label>
+        <input id="T" type="range" min="0.30" max="2.50" step="0.01" value="1.00" />
+        <div class="val" id="Tv">1.00</div>
+      </div>
+
+      <div class="row">
+        <label for="S">S — Spread</label>
+        <input id="S" type="range" min="0.40" max="2.20" step="0.01" value="1.00" />
+        <div class="val" id="Sv">1.00</div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div><b>Quality</b> improves with higher D, but degrades with higher S.</div>
+      <div><b>Speed</b> improves with higher T, but reduces effective D in fast mode.</div>
+      <div>Reset: <span class="kbd">R</span></div>
+      <div>Pause: <span class="kbd">Space</span></div>
     </div>
   </div>
+
+  <div class="links">
+    Back to docs: <a href="../">Inkjet DTS</a>
+  </div>
+
+  <script src="./demo.js"></script>
 </body>
 </html>
