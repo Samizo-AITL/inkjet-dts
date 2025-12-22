@@ -13,6 +13,13 @@
       color: #c9d1d9;
     }
 
+    /* === CANVAS FIX === */
+    canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none; /* リンク操作を邪魔しない */
+    }
+
     #label {
       position: fixed;
       bottom: 16px;
@@ -58,6 +65,20 @@
   </div>
 
   <!-- Animation logic -->
+  <script>
+    // === CANVAS SIZE INITIALIZE (必須) ===
+    const canvas = document.getElementById("c");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+  </script>
+
+  <!-- 実アニメーション本体 -->
   <script src="./demo.js"></script>
 </body>
 </html>
