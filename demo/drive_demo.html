@@ -2,45 +2,35 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Inkjet Drive Demo</title>
+<title>Inkjet DTS Demo</title>
 <style>
-body { font-family: sans-serif; padding: 20px; }
-canvas { border: 1px solid #999; }
+body { font-family: sans-serif; margin: 20px; }
+canvas { border:1px solid #aaa; margin-bottom:10px; }
+label { margin-right:10px; }
 </style>
 </head>
 <body>
 
-<h3>Inkjet Drive Voltage Demo</h3>
+<h2>Inkjet Delay-Time Spectrum Demo</h2>
 
-V = <input type="range" id="v" min="0" max="30" step="0.5" value="15">
-<span id="vv">15</span> V
+<label>Drive Voltage [V]
+<input type="range" id="V" min="5" max="40" step="1" value="25">
+<span id="Vv">25</span></label>
+
+<label>Delay [µs]
+<input type="range" id="D" min="1" max="50" step="1" value="20">
+<span id="Dv">20</span></label>
+
+<label>Damping
+<input type="range" id="Z" min="0.01" max="0.2" step="0.01" value="0.08">
+<span id="Zv">0.08</span></label>
 
 <br><br>
-<canvas id="c" width="600" height="300"></canvas>
 
-<script>
-const c = document.getElementById("c");
-const ctx = c.getContext("2d");
-const v = document.getElementById("v");
-const vv = document.getElementById("vv");
+<canvas id="cvV" width="700" height="150"></canvas>
+<canvas id="cvP" width="700" height="150"></canvas>
+<canvas id="cvQ" width="700" height="150"></canvas>
 
-function draw(V){
-  ctx.clearRect(0,0,600,300);
-  ctx.beginPath();
-  ctx.moveTo(0,150);
-  for(let x=0;x<600;x++){
-    ctx.lineTo(x,150 - Math.sin(x/30)*V*3);
-  }
-  ctx.stroke();
-}
-
-v.oninput = ()=>{
-  vv.textContent = v.value;
-  draw(v.value);
-};
-
-draw(v.value);
-</script>
-
+<script src="dts.js"></script>
 </body>
 </html>
