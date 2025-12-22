@@ -140,7 +140,7 @@ can be expressed as combinations of these three axes.
 **Inkjet DTS (Drop Density – Throughput – Spread)**  
 This interactive animation visualizes the trade-off between print quality and speed.
 
-👉 **[Launch Demo](./demo/)**  
+👉 **[Launch Demo](./demo/)**
 
 ---
 
