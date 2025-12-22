@@ -12,70 +12,43 @@
       font-family: system-ui, sans-serif;
       color: #c9d1d9;
     }
-
-    /* canvas を全画面化 */
-    #c {
+    canvas {
       position: fixed;
       inset: 0;
-      /* リンク操作を邪魔しない */
-      pointer-events: none;
     }
-
-    #label {
-      position: fixed;
-      bottom: 16px;
-      left: 24px;
-      color: #9fb3c8;
-      letter-spacing: 0.08em;
-      font-size: 13px;
-    }
-
     #links {
       position: fixed;
       top: 24px;
       left: 24px;
       font-size: 16px;
       line-height: 1.8;
+      z-index: 10;
     }
-
-    #links a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
-
-    #links a:hover {
-      text-decoration: underline;
+    #links a { color: #58a6ff; text-decoration: none; }
+    #links a:hover { text-decoration: underline; }
+    #label {
+      position: fixed;
+      bottom: 16px;
+      left: 24px;
+      font-size: 13px;
+      color: #9fb3c8;
     }
   </style>
 </head>
-
 <body>
-  <canvas id="c"></canvas>
 
-  <div id="links">
-    ▶ <a href="./index.html">Main Animation Demo</a><br>
-    ▶ <a href="./drive_demo.html">Drive Waveform Demo</a><br>
-    ▶ <a href="./dts_demo.html">DTS Physics Demo</a>
-  </div>
+<canvas id="c"></canvas>
 
-  <div id="label">
-    Inkjet DTS Demo — Drop Density × Throughput × Spread
-  </div>
+<div id="links">
+  ▶ <a href="./index.html">Main Animation Demo</a><br>
+  ▶ <a href="./drive_demo.html">Drive Waveform Demo</a><br>
+  ▶ <a href="./dts_demo.html">DTS Physics Demo</a>
+</div>
 
-  <!-- 重要：canvas サイズだけ設定（名前衝突を避ける） -->
-  <script>
-    (() => {
-      const c = document.getElementById("c");
-      function resize() {
-        c.width  = window.innerWidth;
-        c.height = window.innerHeight;
-      }
-      window.addEventListener("resize", resize);
-      resize();
-    })();
-  </script>
+<div id="label">
+  Inkjet DTS Demo — Drop Density × Throughput × Spread
+</div>
 
-  <!-- 既存のアニメーション -->
-  <script src="./demo.js"></script>
+<script src="./demo.js"></script>
 </body>
 </html>
