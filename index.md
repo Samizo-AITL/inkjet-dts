@@ -147,6 +147,8 @@ This interactive animation visualizes the trade-off between print quality and sp
 
 👉 **[Launch Demo](./demo/)**  
 
+👉 **[Drive Waveform Demo](./demo/drive_demo.html)**
+
 ---
 
 ## Notes
