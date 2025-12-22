@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Inkjet Drive Demo</title>
+<style>
+body { font-family: sans-serif; padding: 20px; }
+canvas { border: 1px solid #999; }
+</style>
+</head>
+<body>
+
+<h3>Inkjet Drive Voltage Demo</h3>
+
+V = <input type="range" id="v" min="0" max="30" step="0.5" value="15">
+<span id="vv">15</span> V
+
+<br><br>
+<canvas id="c" width="600" height="300"></canvas>
+
+<script>
+const c = document.getElementById("c");
+const ctx = c.getContext("2d");
+const v = document.getElementById("v");
+const vv = document.getElementById("vv");
+
+function draw(V){
+  ctx.clearRect(0,0,600,300);
+  ctx.beginPath();
+  ctx.moveTo(0,150);
+  for(let x=0;x<600;x++){
+    ctx.lineTo(x,150 - Math.sin(x/30)*V*3);
+  }
+  ctx.stroke();
+}
+
+v.oninput = ()=>{
+  vv.textContent = v.value;
+  draw(v.value);
+};
+
+draw(v.value);
+</script>
+
+</body>
+</html>
