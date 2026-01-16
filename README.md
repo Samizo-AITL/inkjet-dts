@@ -184,7 +184,7 @@ by keeping the model **simple, executable, and visual**.
 
 ## 📄 License
 
-[![Hybrid License](https://img.shields.io/badge/license-Hybrid-blueviolet)](https://samizo-aitl.github.io/inkjet-dts//#-license)
+[![Hybrid License](https://img.shields.io/badge/license-Hybrid-blueviolet)](https://samizo-aitl.github.io/inkjet-dts/#---license)
 
 | 📌 Item | License | Description |
 |--------|---------|-------------|
