@@ -3,11 +3,11 @@ layout: default
 title: Inkjet DTS
 ---
 
-# Inkjet DTS  
+# 🖨 Inkjet DTS  
 **Inkjet Drop density – Throughput – Spread**
 
-**Inkjet DTS** is a minimal design model for understanding
-how **print quality**, **throughput**, and **dot spread**
+**Inkjet DTS** is a minimal design model for understanding  
+how **print quality**, **throughput**, and **dot spread**  
 are causally coupled in inkjet printing systems.
 
 ---
@@ -20,23 +20,24 @@ are causally coupled in inkjet printing systems.
 
 ---
 
-## Overview
+## 🧭 Overview
 
-This page presents a **minimal educational model** for understanding the
+This page presents a **minimal educational model** for understanding the  
 fundamental trade-off in inkjet printing between:
 
-- **Print quality**
-- **Printing speed**
+- 🖨 **Print quality**  
+- ⚡ **Printing speed**
 
 The model is intentionally simplified.  
-Its purpose is to clarify **design causality**, not to reproduce the behavior
+Its purpose is to clarify **design causality**, not to reproduce the behavior  
 of real printers or specific products.
 
 ---
 
-## Directory Structure
+## 🗂 Directory Structure
 
-This repository is organized to clearly separate **theoretical modeling**, **simulation code**, and **visual outputs**.
+This repository is organized to clearly separate  
+**theoretical modeling**, **simulation code**, and **visual outputs**.
 
 ```
 inkjet-dts/
@@ -72,31 +73,32 @@ inkjet-dts/
 
 ---
 
-## Design Intent
+## 🎯 Design Intent
 
-- **`code/`** contains a minimal but explicit Python model of inkjet trade-offs  
-- **`images/`** visualizes how parameter choices affect dot spread and print quality  
-- **GitHub Pages** is used to document the model, not to execute it
+- 📁 **`code/`** contains a minimal but explicit Python model of inkjet trade-offs  
+- 🖼 **`images/`** visualizes how parameter choices affect dot spread and print quality  
+- 🌐 **GitHub Pages** is used to document the model, not to execute it  
 
-This separation keeps the system easy to understand, extend, and reuse for educational purposes.
+This separation keeps the system easy to understand, extend, and reuse  
+for **educational purposes**.
 
 ---
 
-## Dominant axes (D–T–S)
+## 🧮 Dominant axes (D–T–S)
 
-Inkjet printing behavior can be reduced to three dominant axes:
+Inkjet printing behavior can be reduced to **three dominant axes**:
 
 - **D — Drop density**  
   Number of ink drops per unit area  
-  → governs graininess and perceived image quality
+  → governs graininess and perceived image quality  
 
 - **T — Throughput**  
   Ink ejection capability per unit time  
-  → limits achievable printing speed
+  → limits achievable printing speed  
 
 - **S — Spread**  
-  Dot spread on the medium (ink–paper interaction)  
-  → determines sharpness versus bleeding
+  Dot spread on the medium *(ink–paper interaction)*  
+  → determines sharpness versus bleeding  
 
 Most practical parameters  
 (dpi, passes, drop size, color count, nozzle count)  
@@ -104,7 +106,7 @@ can be expressed as combinations of these three axes.
 
 ---
 
-## Visualization examples
+## 🖼 Visualization examples
 
 ### Graininess vs. quality
 
@@ -142,34 +144,39 @@ can be expressed as combinations of these three axes.
 
 **Inkjet DTS (Drop Density – Throughput – Spread)**  
 
-This interactive demo provides a **conceptual visualization** of the fundamental trade-off in inkjet printing:
+This interactive demo provides a **conceptual visualization** of the  
+fundamental trade-off in inkjet printing:
 
-- **Drop Density (D)** — number of ink droplets deposited per unit area  
-- **Throughput (T)** — printing speed / firing frequency  
-- **Spread (S)** — dot expansion caused by fluid dynamics and substrate interaction  
+- 💧 **Drop Density (D)** — number of ink droplets per unit area  
+- ⚡ **Throughput (T)** — printing speed / firing frequency  
+- 🌊 **Spread (S)** — dot expansion caused by fluid dynamics and substrate interaction  
 
-By adjusting these three parameters, the demo illustrates how **print quality and printing speed inherently compete** with each other.  
-The visualization is based on a **synthetic, educational model** intended to build intuition — it does **not** represent measured data or a device-specific simulation.
+By adjusting these three parameters, the demo illustrates how  
+**print quality and printing speed inherently compete** with each other.
+
+The visualization is based on a **synthetic, educational model** intended  
+to build intuition — it does **not** represent measured data or a  
+device-specific simulation.
 
 👉 **[Launch Demo](./demo/)**
 
 ---
 
-## Notes
+## 📝 Notes
 
-- The images shown above are **synthetic visualizations**, not measured print data.
-- They are designed to make qualitative differences **immediately visible**.
-- Numerical accuracy and product-specific tuning are intentionally out of scope.
+- 🧪 The images shown above are **synthetic visualizations**, not measured print data  
+- 👀 They are designed to make qualitative differences **immediately visible**  
+- 🎯 Numerical accuracy and product-specific tuning are intentionally out of scope  
 
 ---
 
-## Purpose
+## 🎓 Purpose
 
 This project is intended to support:
 
-- engineering education
-- early-stage design discussions
-- clear explanation of inkjet trade-offs
+- engineering education  
+- early-stage design discussions  
+- clear explanation of inkjet trade-offs  
 
 by keeping the model **simple, executable, and visual**.
 
