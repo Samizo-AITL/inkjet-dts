@@ -1,6 +1,8 @@
 # 🖨 Inkjet DTS  
 **Inkjet Drop density – Throughput – Spread**
 
+[![Back to Portal (EN)](https://img.shields.io/badge/Back%20to%20Portal-0B5FFF?style=for-the-badge&logo=homeassistant&logoColor=white)](https://samizo-aitl.github.io/portal/en/)
+
 **Inkjet DTS** is a minimal design model for understanding  
 how **print quality**, **throughput**, and **dot spread**  
 are causally coupled in inkjet printing systems.
